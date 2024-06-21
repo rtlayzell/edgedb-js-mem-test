@@ -1,0 +1,22 @@
+{
+  "name": "edgedb-js-mem-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "db:gen": "npx @edgedb/generate edgeql-js",
+    "db:init": "edgedb project init --server-instance edgedb_js_mem_test --non-interactive && edgedb configure set listen_addresses 127.0.0.1 ::1 && npm run db:migrate",
+    "db:migrate": "edgedb migration create && edgedb migrate && npm run db:gen",
+    "db:destroy": "edgedb instance destroy -I edgedb_js_mem_test --force",
+    "db:reset": "npm run db:destroy && npm run db:init"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "edgedb": "^1.5.7"
+  },
+  "devDependencies": {
+    "@edgedb/generate": "^0.5.3"
+  }
+}
