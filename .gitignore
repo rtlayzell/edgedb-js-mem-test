@@ -2,6 +2,7 @@
 /dist
 /node_modules
 /build
+*.tsbuildinfo
 
 # Logs
 logs
@@ -36,4 +37,4 @@ lerna-debug.log*
 .tmp
 
 # EdgeDB Generated
-/dbschema/edgeql-js
+dbschema/edgeql-js
